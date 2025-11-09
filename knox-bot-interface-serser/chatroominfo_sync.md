@@ -6,7 +6,7 @@
 
 
 ---
-
+````python
 🧩 main.py (운영 안전형 구조)
 
 from fastapi import FastAPI, HTTPException, Depends
@@ -153,7 +153,7 @@ async def sync_all(mongo=Depends(get_mongo), redis=Depends(get_redis)):
 
     return {"mode": "all", "ok": True, "synced": total, "batch_size": BATCH_SIZE}
 
-
+```
 ---
 
 ⚙️ 운영 구분 설계 요약
