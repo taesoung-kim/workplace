@@ -153,7 +153,8 @@ async def sync_all(mongo=Depends(get_mongo), redis=Depends(get_redis)):
 
     return {"mode": "all", "ok": True, "synced": total, "batch_size": BATCH_SIZE}
 
-```
+````
+
 ---
 
 ⚙️ 운영 구분 설계 요약
@@ -177,10 +178,3 @@ Endpoint	역할	위험도	호출 주체
 
 구조 단순, 실시간 락 안전성 확보
 
-
-
----
-
-이 버전이면 운영 중 실수로 Redis 전체를 덮어쓸 일이 없다.
-원하면 /sync_all 실행 시 관리자 키나 토큰을 검증하도록(예: header X-Admin-Key) 보안도 추가해줄 수 있다.
-그 옵션도 추가할까?
